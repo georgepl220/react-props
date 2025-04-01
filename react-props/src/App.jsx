@@ -1,14 +1,14 @@
-// src/App.jsx
 import React from 'react';
-import './App.css';
-import CardList from './components/CardList/CardList';
-import cardsData from './data'; // Переконайтеся, що це ваші дані для карток
+import ProfileCard from './components/Card/ProfileCard'; // Врахуйте правильний шлях до компонента
 
 function App() {
   return (
-    <div className="App">
-      <h1>Галерея карток</h1>
-      <CardList cardsData={cardsData} />
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <ProfileCard 
+        title="Плонський Георгій"
+        description="Студент"
+        image="https://via.placeholder.com/300"
+      />
     </div>
   );
 }

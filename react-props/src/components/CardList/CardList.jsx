@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfileCard from '../Card/Card'; // Переконайтеся, що імпорт правильний
+import ProfileCard from '../Card/Card';
 
 function CardList({ cardsData }) {
   return (
