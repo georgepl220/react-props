@@ -1,12 +1,11 @@
 import React from 'react';
-import Card from '../Card/Card';
-import './CardList.css';
+import ProfileCard from '../Card/Card'; // Переконайтеся, що імпорт правильний
 
 function CardList({ cardsData }) {
   return (
-    <div className="card-list">
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
       {cardsData.map((card) => (
-        <Card
+        <ProfileCard
           key={card.id}
           title={card.title}
           description={card.description}

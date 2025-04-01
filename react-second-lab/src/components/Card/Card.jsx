@@ -1,21 +1,42 @@
 import React from 'react';
-import './Card.css';
+import { Card, CardContent, CardMedia, Button, Typography } from '@mui/material';
 
-function Card({ title, description, image }) {
+function ProfileCard({ title, description, image }) {
   const handleClick = () => {
     alert(title);
   };
 
   return (
-    <div className="card">
-      <img src={image} alt={title} className="card-image" />
-      <div className="card-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <button onClick={handleClick}>Дізнатися більше</button>
-      </div>
-    </div>
+    <Card sx={{ width: 300, boxShadow: 3, borderRadius: 2, margin: '10px' }}>
+      <CardMedia
+        component="img"
+        height="200"
+        image={image}
+        alt={title}
+        sx={{ borderRadius: '8px 8px 0 0', objectFit: 'cover' }}
+      />
+      <CardContent sx={{ padding: '15px' }}>
+        <Typography variant="h6" component="div" sx={{ marginBottom: '10px' }}>
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ marginBottom: '10px' }}>
+          {description}
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{
+            borderRadius: '5px',
+            padding: '8px 12px',
+            '&:hover': { backgroundColor: '#0056b3' },
+          }}
+          onClick={handleClick}
+        >
+          Дізнатися більше
+        </Button>
+      </CardContent>
+    </Card>
   );
 }
 
-export default Card;
+export default ProfileCard;
